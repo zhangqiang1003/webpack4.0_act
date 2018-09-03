@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.c {
+  color: red;
+  font-size: 12px;
+  & > .t {
+    color: blue;
+  }
+}
