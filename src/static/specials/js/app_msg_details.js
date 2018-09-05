@@ -1,4 +1,4 @@
-// import flexible from './flexible.js'
+import flexible from './flexible.js'
 import $ from 'jquery'
 import style from '../css/app_msg_details.scss'
 
