@@ -16,6 +16,8 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 // 引入config.js
 const config = require('./src/configHtml/config')
+// 自动打开浏览器
+const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 // 通过 html-webpack-plugin 生成的 HTML 集合
 let HTMLPlugins = []
 // 入口文件集合
@@ -149,9 +151,12 @@ module.exports = (env, argv) => ({
       root: path.resolve(__dirname, './'), //根目录
       verbose: true, //开启在控制台输出信息
       dry: false //启用删除文件
-    })
+    }),
+    new OpenBrowserPlugin({url: 'http://localhost:8080/specials/'})
   ],
   devServer: {
+    host: '0.0.0.0',
+    port: 8080,
     // 项目根目录
     contentBase: './dist',
     // 错误、警告展示设置

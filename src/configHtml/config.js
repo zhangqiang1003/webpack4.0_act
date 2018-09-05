@@ -10,6 +10,7 @@ module.exports = {
     { page: 'c', title: 'c页'},
     { page: 'd', title: 'd页'},
     { page: 'e', title: 'e页'},
-    { page: 'jquery', title: 'jquery页'}
+    { page: 'jquery', title: 'jquery页'},
+    { page: 'app_msg_details', title: 'APP消息详情'}
   ]
 }

@@ -1,0 +1,12 @@
+// 移动端转换rem
+@function remb($value, $scale: 75px) {
+  $root: $scale;
+  $val: parseInt($value);
+  $return: ();
+  @if unit($value) == 'px' {
+    $return: append($return, ($value / $root * 1rem));
+  } @else {
+    $return: append($return, ($value * $root * 1px));
+  }
+  @return $return;
+}

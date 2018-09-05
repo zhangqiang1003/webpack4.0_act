@@ -9,7 +9,8 @@
   justify-content: space-around;
   align-content: flex-start;
   & > .page {
-    width: 100px;
+    min-width: 200px;
+    max-width: 300px;
     height: 40px;
     line-height: 40px;
     margin-left: 20px;
@@ -22,5 +23,12 @@
     border-bottom: 5px solid blue;
     border-radius: 0 0 5px 5px;
     background-color: bisque;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    &.bg {
+      background-color: transparent;
+      border-bottom-color: transparent;
+      height: 0;
+    }
   }
 }

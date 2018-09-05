@@ -1,0 +1,40 @@
+@import '../../../common/scss/_tool.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+#wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(360deg, rgba(41, 48, 65, 1) 0%, rgba(33, 39, 53, 1) 100%);
+}
+.msg-details-wrapper {
+  background: linear-gradient(360deg, rgba(41, 48, 65, 1) 0%, rgba(33, 39, 53, 1) 100%);
+  & > h2 {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    padding-top: remb(29px);
+    padding-bottom: remb(10px);
+  }
+  & > .time {
+    text-align: center;
+    font-size: 12px;
+    color: rgba(110, 116, 130, 1);
+    font-weight: 400;
+    padding-bottom: remb(30px);
+  }
+  & > .content-wrapper {
+    padding-left: remb(16px);
+    padding-right: remb(16px);
+    font-size: 16px;
+    color: rgba(172, 175, 184, 1);
+    line-height: 22px;
+    padding-bottom: remb(30px);
+  }
+}
