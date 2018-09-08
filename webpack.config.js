@@ -18,6 +18,8 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const config = require('./src/configHtml/config')
 // 自动打开浏览器
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+// copy静态资源文件
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 // 通过 html-webpack-plugin 生成的 HTML 集合
 let HTMLPlugins = []
 // 入口文件集合
@@ -45,7 +47,7 @@ module.exports = (env, argv) => ({
   entry: Entries,
   // 输出文件
   output: {
-    filename: 'static/specials/js/[name].[hash].js',
+    filename: 'static/specials/js/[name].js',
     path: path.resolve(__dirname, './dist'),
     publicPath: '/'
   },
@@ -87,7 +89,7 @@ module.exports = (env, argv) => ({
         options: {
           limit: 10000,
           // 打包生成图片的名字
-          name: 'static/specials/images/[name].[hash].[ext]',
+          name: 'static/specials/images/[name].[ext]',
         }
       }],
     },
@@ -119,23 +121,23 @@ module.exports = (env, argv) => ({
       new OptimizeCSSAssetsPlugin()
     ],
     splitChunks: {
-      chunks: 'async',
-      minSize: 30000,
-      minChunks: 1,
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
-      automaticNameDelimiter: '~',
-      name: true,
+      // chunks: 'async',
+      // minSize: 30000,
+      // minChunks: 1,
+      // maxAsyncRequests: 5,
+      // maxInitialRequests: 3,
+      // automaticNameDelimiter: '~',
+      // name: true,
       cacheGroups: {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
-          priority: -10
-        },
-        default: {
-          minChunks: 2,
-          priority: -20,
+          name: 'vendor',
+          chunks: 'async',
+          priority: 10,
+          enforce: true,
           reuseExistingChunk: true
-        }
+        },
+        default: false
       }
     }
   },
@@ -144,14 +146,20 @@ module.exports = (env, argv) => ({
     // 自动生成html插件
     ...HTMLPlugins,
     new MiniCssExtractPlugin({
-      filename: 'static/specials/css/[name].[hash].css'
+      filename: 'static/specials/css/[name].css'
     }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, './src/static/specials/plugin/'),
+        to: path.resolve(__dirname, './dist/static/specials/plugin/')
+      }
+    ]),
     // 自动清理 dist 文件夹
-    new CleanWebpackPlugin(['dist'], {
-      root: path.resolve(__dirname, './'), //根目录
-      verbose: true, //开启在控制台输出信息
-      dry: false //启用删除文件
-    }),
+    // new CleanWebpackPlugin(['dist'], {
+    //   root: path.resolve(__dirname, './'), //根目录
+    //   verbose: true, //开启在控制台输出信息
+    //   dry: false //启用删除文件
+    // }),
     new OpenBrowserPlugin({url: 'http://localhost:8080/specials/'})
   ],
   devServer: {
