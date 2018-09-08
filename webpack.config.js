@@ -121,14 +121,15 @@ module.exports = (env, argv) => ({
       new OptimizeCSSAssetsPlugin()
     ],
     splitChunks: {
-      // chunks: 'async',
-      // minSize: 30000,
-      // minChunks: 1,
-      // maxAsyncRequests: 5,
-      // maxInitialRequests: 3,
-      // automaticNameDelimiter: '~',
-      // name: true,
+      chunks: 'async',
+      minSize: 30000,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: '~',
+      name: true,
       cacheGroups: {
+        default: false,
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendor',
@@ -137,7 +138,12 @@ module.exports = (env, argv) => ({
           enforce: true,
           reuseExistingChunk: true
         },
-        default: false
+        commons: {
+          name: 'commons',
+          chunks: 'initial',
+          minSize: 0,
+          minChunks: 2
+        }
       }
     }
   },
@@ -155,11 +161,7 @@ module.exports = (env, argv) => ({
       }
     ]),
     // 自动清理 dist 文件夹
-    // new CleanWebpackPlugin(['dist'], {
-    //   root: path.resolve(__dirname, './'), //根目录
-    //   verbose: true, //开启在控制台输出信息
-    //   dry: false //启用删除文件
-    // }),
+    new CleanWebpackPlugin(['dist'], {}),
     new OpenBrowserPlugin({url: 'http://localhost:8080/specials/'})
   ],
   devServer: {
