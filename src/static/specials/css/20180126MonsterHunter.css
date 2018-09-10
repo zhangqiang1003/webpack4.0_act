@@ -1,0 +1,173 @@
+body {
+  background: #212735;
+}
+a {
+  text-decoration: none !important;
+}
+.center {
+  margin: 0 auto;
+  text-align: center; }
+
+div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.bg {
+  background-size: 100%;
+  background-repeat: no-repeat; }
+
+.wrapper {
+  width: 10rem; }
+
+.special-context {
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 96px;
+  min-width: 1300px;
+  max-width: 1920px;
+  width: 100%; }
+  .special-context .download-dom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 2.1875rem;
+    height: 0.52083rem;
+    color: #100d10;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-weight: bold;
+    font-size: 0.15625rem;
+    margin-top: 0.20833rem;
+    cursor: pointer;
+    background-image: url("/static/specials/images/20180126MonsterHunter_bg5.png"); }
+    .special-context .download-dom::after {
+      display: none;
+      content: '';
+      background-image: url("/static/specials/images/20180126MonsterHunter_bg6.png"); }
+    .special-context .download-dom:hover {
+      color: #fad1b6;
+      background-image: url("/static/specials/images/20180126MonsterHunter_bg6.png"); }
+  .special-context .context-header {
+    overflow: hidden;
+    width: 100%;
+    height: 4.89583rem;
+    background-image: url("/static/specials/images/20180126MonsterHunter_bg1.png"); }
+    .special-context .context-header .theme-bg {
+      margin-top: 0.90625rem;
+      width: 4.66667rem;
+      height: 2.54688rem;
+      background-image: url("/static/specials/images/20180126MonsterHunter_bg14.png"); }
+  .special-context .wrapper1 {
+    height: 5.4375rem;
+    overflow: hidden;
+    background-image: url("/static/specials/images/20180126MonsterHunter_bg2.png"); }
+    .special-context .wrapper1 .wrapper-title {
+      width: 3.90625rem;
+      height: 0.3125rem;
+      margin-top: 0.625rem;
+      margin-bottom: 0.3125rem;
+      background-image: url("/static/specials/images/20180126MonsterHunter_bg10.png"); }
+    .special-context .wrapper1 .wrapper-theme {
+      width: 4.26042rem;
+      height: 5.14063rem;
+      background-image: url("/static/specials/images/20180126MonsterHunter_bg12.png"); }
+  .special-context .wrapper2 {
+    height: 6.13542rem;
+    overflow: hidden;
+    background-image: url("/static/specials/images/20180126MonsterHunter_bg4.png"); }
+    .special-context .wrapper2 .wrapper-title {
+      width: 5.32813rem;
+      height: 0.3125rem;
+      margin-top: 0.65104rem;
+      background-image: url("/static/specials/images/20180126MonsterHunter_bg8.png"); }
+    .special-context .wrapper2 .wrapper-dis {
+      font-size: 0.10417rem;
+      color: white;
+      line-height: 0.15625rem;
+      margin-top: 0.13021rem;
+      margin-bottom: 0.32292rem;
+      text-align: center; }
+    .special-context .wrapper2 .wrapper-theme {
+      width: 4.26042rem;
+      height: 3.97396rem;
+      background-image: url("/static/specials/images/20180126MonsterHunter_bg11.png"); }
+  .special-context .wrapper3 {
+    height: 5.86979rem;
+    overflow: hidden;
+    background-image: url("/static/specials/images/20180126MonsterHunter_bg3.jpg"); }
+    .special-context .wrapper3 .wrapper-title {
+      width: 3.2916666666666665rem;
+      height: 0.3072916666666667rem;
+      margin-top: 0.60417rem;
+      margin-bottom: 0.140625rem;
+      background-image: url("/static/specials/images/20180126MonsterHunter_bg7.png"); }
+    .wrapper3 .description {
+      font-size: 0.10416666666666667rem;
+      color: #FFF;
+      text-align: center;
+      margin-bottom: 0.2604166666666667rem;
+    }
+    .special-context .wrapper3 .wrapper-theme {
+      width: 7.75rem;
+      height: 2.5208333333333335rem;
+      margin-left: 0.671875rem;
+      background-image: url("/static/specials/images/20180126MonsterHunter_bg13.png");
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+      .special-context .wrapper3 .wrapper-theme .theme-item {
+        width: 1.2083333333333333rem;
+        height: 100%;
+        padding-top: 1.2083333333333333rem;
+        text-align: center;
+        overflow: hidden; }
+        .special-context .wrapper3 .wrapper-theme .theme-item .item-title {
+          font-size: 0.10416666666666667rem;
+          font-weight: bold;
+          color: #653a1e;
+          line-height: 0.15625rem;
+          margin-bottom: 0.052083333333333336rem; }
+        .special-context .wrapper3 .wrapper-theme .theme-item .item-dis {
+          padding: 0 0.09375rem;
+          font-size: 0.09375rem;
+          line-height: 0.15625rem;
+          color: #653a1e; }
+        .special-context .wrapper3 .wrapper-theme .theme-item:nth-child(1) {
+          margin-left: 0.9rem; }
+          .special-context .wrapper3 .wrapper-theme .theme-item:nth-child(1) .item-bg {
+            width: 0.66146rem;
+            height: 0.65104rem;
+            margin-top: 0.30208rem;
+            margin-bottom: 0.22396rem;
+            background-image: url("/static/specials/images/20180126MonsterHunter_bg15.png"); }
+        .special-context .wrapper3 .wrapper-theme .theme-item:nth-child(2) .item-bg {
+          width: 0.70833rem;
+          height: 0.55208rem;
+          margin-top: 0.34896rem;
+          margin-bottom: 0.28125rem;
+          background-image: url("/static/specials/images/20180126MonsterHunter_bg18.png"); }
+        .special-context .wrapper3 .wrapper-theme .theme-item:nth-child(3) .item-bg {
+          width: 0.4375rem;
+          height: 0.72396rem;
+          margin-top: 0.26563rem;
+          margin-bottom: 0.1875rem;
+          background-image: url("/static/specials/images/20180126MonsterHunter_bg16.png"); }
+        .special-context .wrapper3 .wrapper-theme .theme-item:nth-child(4) .item-bg {
+          width: 0.46354rem;
+          height: 0.57813rem;
+          margin-top: 0.33854rem;
+          margin-bottom: 0.26042rem;
+          background-image: url("/static/specials/images/20180126MonsterHunter_bg17.png"); }
+    .special-context .wrapper3 .wrapper-title2 {
+      width: 4.16146rem;
+      height: 0.3125rem;
+      margin-top: 0.38542rem;
+      margin-bottom: 0.30729rem;
+      background-image: url("/static/specials/images/20180126MonsterHunter_bg9.png"); }

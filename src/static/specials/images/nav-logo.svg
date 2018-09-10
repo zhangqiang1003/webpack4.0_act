@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="800" viewBox="0 0 826 826">
+<defs>
+    <style>
+      .nav-logo {fill:#fff;stroke:#CECECE;stroke-width:0.25;stroke-miterlimit:10;}
+      .shape-1, .shape-2, .shape-3, .shape-4 {fill-rule: evenodd;}
+      .shape-1 {fill: url(#linear-gradient-1);}
+      .shape-2 {fill: url(#linear-gradient-2);}
+      .shape-3 {fill: url(#linear-gradient-3);}
+      .shape-4 {fill: url(#linear-gradient-4);}
+    </style>
+    <linearGradient id="linear-gradient-1" x1="237.462" y1="825.75" x2="815.538" y2="328" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#77929b"/>
+      <stop offset="0.223" stop-color="#77929b"/>
+      <stop offset="1" stop-color="#c0cacc"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="400.453" y1="712" x2="400.453" y2="244.125" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8bddf5"/>
+      <stop offset="0.747" stop-color="#8bd8e2"/>
+      <stop offset="1" stop-color="#8bd8e2"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="266.044" y1="370.156" x2="510.956" y2="78.281" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d2e28a"/>
+      <stop offset="1" stop-color="#b5dd62"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="270.5" y1="91.278" x2="802.75" y2="185.128" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff983e"/>
+      <stop offset="0.984" stop-color="#efba5c"/>
+      <stop offset="1" stop-color="#efba5c"/>
+    </linearGradient>
+  </defs>
+  <circle id="nav-logo" data-name="nav-logo" class="nav-logo" cx="413" cy="413" r="413"/>
+  <path id="shape_1" data-name="shape_1" class="shape-1" d="M227,782C539.5,933.917,885.417,668.083,817.333,328,701.738,328,227,360.608,227,782Z"/>
+  <path id="shape_2" data-name="shape_2" class="shape-2" d="M754.75,305C250.854,102.577-127.106,447.979,128,712,178.75,493.25,337.75,300.5,754.75,305Z"/>
+  <path id="shape_3" data-name="shape_3" class="shape-3" d="M1.833,370.167C55.5-72.75,623.574,64.094,775.167,285.167,494.754,155.25,203.164,131.585,1.833,370.167Z"/>
+  <path id="shape_4" data-name="shape_4" class="shape-4" d="M802.735,276.417C712.658,160.99,545.761,14.7,270.509,25.024,442.968-40.645,704.617,16.165,802.735,276.417Z"/>
+</svg>

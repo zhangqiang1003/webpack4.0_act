@@ -39,7 +39,7 @@ config.HTMLDirs.forEach((html) => {
     }
   })
   HTMLPlugins.push(htmlPlugin)
-  Entries[page] = path.resolve(__dirname, `./src/static/specials/js/${page}.js`)
+  Entries[page] = path.resolve(__dirname, `./src/static/specials/jsx/${page}.js`)
 })
 
 module.exports = (env, argv) => ({
@@ -154,10 +154,26 @@ module.exports = (env, argv) => ({
     new MiniCssExtractPlugin({
       filename: 'static/specials/css/[name].css'
     }),
-    new CopyWebpackPlugin([
+    new CopyWebpackPlugin([ // 静态资源不打包
       {
-        from: path.resolve(__dirname, './src/static/specials/plugin/'),
-        to: path.resolve(__dirname, './dist/static/specials/plugin/')
+        from: path.resolve(__dirname, './src/static/specials/plugin/css/'),
+        to: path.resolve(__dirname, './dist/static/specials/css/')
+      },
+      {
+        from: path.resolve(__dirname, './src/static/specials/plugin/js/'),
+        to: path.resolve(__dirname, './dist/static/specials/js/')
+      },
+      {
+        from: path.resolve(__dirname, './src/static/official_web/'),
+        to: path.resolve(__dirname, './dist/static/official_web/')
+      },
+      {
+        from: path.resolve(__dirname, './src/static/plugins/layer/'),
+        to: path.resolve(__dirname, './dist/static/plugins/layer/')
+      },
+      {
+        from: path.resolve(__dirname, './src/static/specials/images/'),
+        to: path.resolve(__dirname, './dist/static/specials/images/')
       }
     ]),
     // 自动清理 dist 文件夹
