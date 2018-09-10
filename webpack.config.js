@@ -189,6 +189,14 @@ module.exports = (env, argv) => ({
     overlay: {
       errors: true,
       warnings: true
+    },
+    proxy: {
+      //使用代理的方式进行ajax跨域
+      '/': {
+        target: 'http://webtest.qeeyou.cn',
+        changeOrigin: true,
+        secure: false
+      }
     }
   }
 });
