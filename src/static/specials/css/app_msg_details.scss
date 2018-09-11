@@ -10,10 +10,10 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(360deg, rgba(41, 48, 65, 1) 0%, rgba(33, 39, 53, 1) 100%);
+  background: rgba(41, 48, 65, 1);
 }
 .msg-details-wrapper {
-  background: linear-gradient(360deg, rgba(41, 48, 65, 1) 0%, rgba(33, 39, 53, 1) 100%);
+  background: rgba(41, 48, 65, 1);
   & > h2 {
     font-size: 18px;
     color: #fff;
@@ -30,11 +30,24 @@
     padding-bottom: remb(30px);
   }
   & > .content-wrapper {
-    padding-left: remb(16px);
-    padding-right: remb(16px);
+    padding-left: 16px;
+    padding-right: 16px;
     font-size: 16px;
     color: rgba(172, 175, 184, 1);
     line-height: 22px;
     padding-bottom: remb(30px);
+    h1 {
+      font-weight: 100;
+      font-size: 16px;
+    }
+    p {
+      font-weight: 100;
+      font-size: 16px;
+    }
+    img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
   }
 }
