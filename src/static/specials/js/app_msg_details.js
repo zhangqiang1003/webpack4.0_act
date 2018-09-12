@@ -2,7 +2,7 @@
 // import $ from 'jquery'
 import style from '../css/app_msg_details.scss'
 
-(function (win) {  
+(function (win) {
   // 判断Android or ios
   function checkAndroidOrIos() {
     var ret = 'android';

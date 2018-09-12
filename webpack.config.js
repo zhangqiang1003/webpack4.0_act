@@ -39,7 +39,7 @@ config.HTMLDirs.forEach((html) => {
     }
   })
   HTMLPlugins.push(htmlPlugin)
-  Entries[page] = path.resolve(__dirname, `./src/static/specials/jsx/${page}.js`)
+  Entries[page] = path.resolve(__dirname, `./src/static/specials/js/${page}.js`)
 })
 
 module.exports = (env, argv) => ({
