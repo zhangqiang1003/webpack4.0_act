@@ -36,7 +36,7 @@
     color: rgba(172, 175, 184, 1);
     line-height: 22px;
     padding-bottom: remb(30px);
-    h1 {
+    h1, h2, h3, h4, h5, h6 {
       font-weight: 100;
       font-size: 16px;
     }
@@ -47,7 +47,7 @@
     }
     img {
       width: 100%;
-      border-radius: 8px;
+      border-radius: remb(10px);
       display: block;
     }
   }
