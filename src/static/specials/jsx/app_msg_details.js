@@ -62,7 +62,7 @@ import style from '../css/app_msg_details.scss'
   function dealView (data) {
     console.log(data.add_time)
     let reg = /\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])/;
-    let time = reg.exec(data.add_time)[0]
+    let time = reg.exec(data.add_time)[0];
     let oH2 = $('.h2');
     let oTime = $('.time');
     let oCon = $('.content-wrapper');
