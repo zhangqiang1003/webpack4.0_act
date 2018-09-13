@@ -12,6 +12,7 @@ module.exports = {
     // { page: 'e', title: 'e页'},
     // { page: 'jquery', title: 'jquery页'},
     { page: 'app_msg_details', title: 'APP消息详情'} ,
-    { page: '20180126MonsterHunter', title: '专题页测试1' }
+    { page: '20180126MonsterHunter', title: '专题页测试1' },
+    { page: 'color6', title: '彩虹六号专题页'}
   ]
 }

@@ -1,0 +1,24 @@
+@mixin bg-url($url) {
+  background-image: url($url+'@2x.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+    background-image: url($url+'@3x.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+}
+
+@mixin min-height($h1, $h2, $h3) {
+  min-height: $h1;
+  @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+    min-height: $h2;
+  }
+  @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+    min-height: $h3;
+  }
+}
+
+@mixin pcBg($url) {
+  background-image: url('/static/specials/images/'+ $url);
+}

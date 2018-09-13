@@ -1,0 +1,1 @@
+import style from '../css/color6.scss'

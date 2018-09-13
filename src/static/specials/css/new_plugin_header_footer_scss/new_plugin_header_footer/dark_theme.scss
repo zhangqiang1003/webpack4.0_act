@@ -1,0 +1,121 @@
+@import './define_white';
+@import './define_dark';
+
+@mixin darkTheme {
+  .new-plugin-header {
+    background: $darkHeaderBg;
+    box-shadow: 0px 1px 4px 0px $whiteHeaderBoxShandow;
+    .header-container {
+      .logo {
+        background-image: url($darkLogo);
+      }
+      .menus {
+        a {
+          color: $darkMenuSpanFontColor;
+        }
+      }
+      .menu-btns {
+        .login {
+          &:hover {
+            &+.reg {
+              background: $darkHeaderBg;
+              color: $darkMenuSpanFontColor;
+            }
+          }
+        }
+      }
+      .user-info {
+        .avatar-container {
+          .user-account {
+            &::after {
+              border-top: 6px solid $menuLoginAndRegFontColor;
+            }
+          }
+        }
+        .user-menu {
+          background: $darkLoginedUserMenu;
+          top: 100px;
+          border: none;
+          a {
+            &:nth-child(1) {
+              border-bottom: 1px solid #3e455f; 
+            }
+          }
+        }
+      }
+    }
+  }
+  .new-plugin-service {
+    background: $darkServiceBg;
+    .service-item-wrapper {
+      .service-dis {
+        color: $darkServiceFontColor;
+      }
+    }
+  }
+  .new-plugin-footer {
+    background: $darkFooterBg;
+    .footer-container {
+      .top {
+        .left-wrapper {
+          .footer-logo {
+            background-image: url($darkFooterLogo);
+          }
+          .left-footer-content {
+            .title {
+              color: $darkFooterFontColor;
+            }
+            a {
+              color: $darkFooterALinkColor;
+              &:hover {
+                color: $darkFooterFontColor;
+              }
+            }
+          }
+        }
+        .right-wrapper {
+          .contact-us {
+            .phone {
+              color: $darkFooterFontColor;
+            }
+            .time {
+              color: $darkFooterALinkColor;
+            }
+          }
+          .cell-center {
+            a {
+              &.complain {
+                color: $darkFooterFontColor;
+                &:hover {
+                  border: 1px solid $buttomHoverBg;
+                  background-color: $buttomHoverBg;
+                }
+              }
+            }
+            .shares {
+              .share-item {
+                &.weibo {
+                  background-image: url($darkFooterWeiboLogo);
+                }
+                a {
+                  color: $darkFooterBg;
+                  &:hover {
+                    color: #16be83;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .line {
+        background: $darkfFooterLineBg;
+      }
+      .bottom {
+        .info {
+          color: $darkFooterALinkColor;
+        }
+      }
+    }
+  }
+}

@@ -819,7 +819,6 @@ body {
   100% {
     -webkit-transform: scaleX(0) scaleY(0);
     opacity: .3; } }
-
 /* 原来两段变线动画  */
 /*.activity-animate-out {*/
 /*-webkit-backface-visibility: visible;*/
@@ -877,7 +876,6 @@ body {
   100% {
     -webkit-transform: scaleX(1) scaleY(1);
     opacity: 1; } }
-
 @keyframes activity-animate-in {
   0% {
     -webkit-transform: scaleX(0.1) scaleY(0.1);
@@ -885,7 +883,6 @@ body {
   100% {
     -webkit-transform: scaleX(1) scaleY(1);
     opacity: 1; } }
-
 .dark .new-plugin-header {
   background: rgba(33, 39, 53, 0.98);
   -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.06);
@@ -905,12 +902,10 @@ body {
     border: none; }
     .dark .new-plugin-header .header-container .user-info .user-menu a:nth-child(1) {
       border-bottom: 1px solid #3e455f; }
-
 .dark .new-plugin-service {
   background: #293041; }
   .dark .new-plugin-service .service-item-wrapper .service-dis {
     color: white; }
-
 .dark .new-plugin-footer {
   background: #31394c; }
   .dark .new-plugin-footer .footer-container .top .left-wrapper .footer-logo {
@@ -940,3 +935,5 @@ body {
     background: #3e455f; }
   .dark .new-plugin-footer .footer-container .bottom .info {
     color: #6e7482; }
+
+/*# sourceMappingURL=new_plugin_header_footer.css.map */

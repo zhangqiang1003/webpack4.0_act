@@ -1,0 +1,347 @@
+@import '../../../common/scss/_tool.scss';
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+.color6-wrapper {
+  width: 100%;
+  max-width: 1920px;
+  min-width: 1300px;
+  margin: 0 auto;
+  margin-top: 90px;
+  & > .wrapper-groups {
+    width: 100%;
+    box-sizing: border-box;
+    &:nth-of-type(1) {
+      height: rem(940px);
+      background: url(/static/specials/images/color6_banner_bg1.jpg) no-repeat;
+      background-size: cover;
+      padding-top: rem(279px);
+      & > .bg1-img-1 {
+        width: rem(397px);
+        height: rem(116px);
+        margin: 0 auto;
+        background: url(/static/specials/images/color6_R6_LOGO.png) no-repeat;
+        background-size: 100% 100%;
+      }
+      & > .bg1-img-2 {
+        width: rem(1073px);
+        height: rem(233px);
+        margin: 15px auto 0;
+        background: url(/static/specials/images/color6_title.png) no-repeat;
+        background-size: cover;
+      }
+      & > .bg1-img3-wrapper {
+        width: rem(850px);
+        height: rem(217px);
+        margin: rem(53px) auto 0;
+      }
+      a {
+        font-size: rem(36px);
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        &.fr {
+          float: right;
+        }
+      }
+      .list1 {
+        float: left;
+        width: rem(388px);
+        height: rem(98px);
+        line-height: rem(98px);
+        background: url(/static/specials/images/color6_button101_bg.png) no-repeat;
+        background-size: cover;
+        cursor: pointer;
+        &:hover {
+          background: url(/static/specials/images/color6_button101_hover_bg.png) no-repeat;
+          background-size: cover;
+        }
+      }
+    }
+    &:nth-of-type(2) {
+      height: rem(1070px);
+      background: url(/static/specials/images/color6_banner_bg2.png) no-repeat;
+      background-size: cover;
+      padding-top: rem(60px);
+      & > .groups-title {
+        width: rem(600px);
+        height: rem(61px);
+        margin: 0 auto;
+        background: url(/static/specials/images/color6_2_text.png) no-repeat;
+        background-size: 100% 100%;
+      }
+      & > .introduce {
+        font-size: rem(20px);
+        line-height: rem(30px);
+        color: #fff;
+        width: rem(965px);
+        margin: rem(86px) auto 0;
+        text-align: center;
+      }
+      & > .bg2-img-1 {
+        width: rem(1160px);
+        height: rem(710px);
+        margin: rem(60px) auto 0;
+        background: url(/static/specials/images/color6_2_1.png) no-repeat;
+        background-size: cover;
+      }
+    }
+    &:nth-of-type(3) {
+      height: rem(930px);
+      background: url(/static/specials/images/color6_banner_bg3.jpg) no-repeat;
+      background-size: cover;
+      padding-top: rem(60px);
+      & > .groups-title {
+        width: rem(979px);
+        height: rem(61px);
+        margin: 0 auto;
+        background: url(/static/specials/images/color6_3_text.png) no-repeat;
+        background-size: 100% 100%;
+      }
+      & > .bg3-img-wrapper {
+        width: rem(1158px);
+        height: rem(528px);
+        margin: rem(132px) auto 0;
+        & > .bg3-list {
+          float: left;
+          width: rem(282px);
+          height: rem(528px);
+          position: relative;
+          &.mgr {
+            margin-right: rem(10px);
+          }
+          &:nth-of-type(1) {
+            background: url(/static/specials/images/color6_3_1.png) no-repeat;
+            background-size: cover;
+          }
+          &:nth-of-type(2) {
+            background: url(/static/specials/images/color6_3_2.png) no-repeat;
+            background-size: cover;
+          }
+          &:nth-of-type(3) {
+            background: url(/static/specials/images/color6_3_3.png) no-repeat;
+            background-size: cover;
+          }
+          &:nth-of-type(4) {
+            background: url(/static/specials/images/color6_3_4.png) no-repeat;
+            background-size: cover;
+          }
+        }
+        .text-wrapper {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: rem(213px);
+          padding-left: rem(31px);
+          padding-right: rem(31px);
+          text-align: center;
+          &.pd {
+            padding-left: rem(20px);
+            padding-right: rem(20px);
+          }
+          & > h3 {
+            font-size: rem(24px);
+            color: rgba(239, 177, 52, 1);
+            font-weight: bold;
+            font-family: MicrosoftYaHei;
+          }
+          & > p {
+            font-size: rem(20px);
+            line-height: rem(30px);
+            color: #fff;
+            font-weight: 400;
+            font-family: MicrosoftYaHei;
+          }
+        }
+      }
+    }
+    &:nth-of-type(4) {
+      height: rem(848px);
+      background: url(/static/specials/images/color6_banner_bg4.jpg) no-repeat;
+      background-size: cover;
+      padding-top: rem(61px);
+      & > .groups-title {
+        width: rem(1102px);
+        height: rem(61px);
+        margin: 0 auto;
+        background: url(/static/specials/images/color6_4_text.png) no-repeat;
+        background-size: 100% 100%;
+      }
+      & > .introduce {
+        font-size: rem(20px);
+        line-height: rem(30px);
+        color: #fff;
+        width: rem(393px);
+        margin: rem(87px) auto 0;
+        text-align: center;
+      }
+      & > .bg4-img-1 {
+        width: rem(1160px);
+        height: rem(445px);
+        margin: rem(61px) auto 0;
+        & > .bg4-list {
+          float: left;
+          width: rem(565px);
+          height: rem(445px);
+          &.mgr {
+            margin-right: rem(30px);
+          }
+          &:nth-of-type(1) {
+            background: url(/static/specials/images/color6_4_1.png) no-repeat;
+            background-size: cover;
+          }
+          &:nth-of-type(2) {
+            background: url(/static/specials/images/color6_4_2.png) no-repeat;
+            background-size: cover;
+          }
+        }
+      }
+      .text-wrapper {
+        width: rem(565px);
+        margin-top: rem(138px);
+        &.text-wrapper-1 {
+          margin-top: rem(351px);
+        }
+        & > span {
+          width: 50%;
+          float: left;
+          text-align: center;
+          font-size: rem(20px);
+          color: #fff;
+          font-family: MicrosoftYaHei;
+          &:nth-of-type(1) {
+            position: relative;
+            right: rem(15px);
+          }
+          &:nth-of-type(2) {
+            position: relative;
+            left: rem(12px);
+          }
+        }
+      }
+    }
+    &:nth-of-type(5) {
+      height: rem(875px);
+      background: url(/static/specials/images/color6_banner_bg5.jpg) no-repeat;
+      background-size: cover;
+      padding-top: rem(60px);
+      & > .groups-title {
+        width: rem(503px);
+        height: rem(61px);
+        margin: 0 auto;
+        overflow: hidden;
+        background: url(/static/specials/images/color6_5_text.png) no-repeat;
+        background-size: 100% 100%;
+      }
+      & > .bg5-img-wrapper {
+        width: rem(1138px);
+        height: rem(500px);
+        margin: rem(131px) auto 0;
+      }
+      .bg5-img-list {
+        width: rem(256px);
+        height: rem(500px);
+        float: left;
+        &.mgr {
+          margin-right: rem(38px);
+        }
+        & > .bg5-img {
+          width: rem(256px);
+          height: rem(251px);
+          &.bg5-img-1 {
+            background: url(/static/specials/images/color6_5_1.png) no-repeat;
+            background-size: cover;
+          }
+          &.bg5-img-2 {
+            background: url(/static/specials/images/color6_5_2.png) no-repeat;
+            background-size: cover;
+          }
+          &.bg5-img-3 {
+            background: url(/static/specials/images/color6_5_3.png) no-repeat;
+            background-size: cover;
+          }
+          &.bg5-img-4 {
+            background: url(/static/specials/images/color6_5_4.png) no-repeat;
+            background-size: cover;
+          }
+        }
+        & > .bg5-text-wrapper {
+          padding-top: rem(60px);
+          text-align: center;
+          font-family:MicrosoftYaHei;
+          padding-left: rem(15px);
+          padding-right: rem(15px);
+          &.pd0 {
+            padding-left: 0;
+            padding-right: 0;
+          }
+          & > h3 {
+            font-size: rem(24px);
+            color: rgba(239, 177, 52, 1);
+            font-weight: bold;
+            line-height: rem(30px);
+            margin: 0 auto;
+          }
+          & > p {
+            font-size: rem(20px);
+            line-height: rem(30px);
+            color: #fff;
+            &.pd15 {
+              padding-left: rem(15px);
+              padding-right: rem(15px);
+            }
+          }
+        }
+      }
+    }
+    &:nth-of-type(6) {
+      height: rem(645px);
+      background: url(/static/specials/images/color6_banner_bg6.jpg) no-repeat;
+      background-size: cover;
+      padding-top: rem(94px);
+      & > .groups-title {
+        width: rem(709px);
+        height: rem(49px);
+        margin: 0 auto;
+        background: url(/static/specials/images/color6_6-text.png) no-repeat;
+        background-size: 100% 100%;
+      }
+      & > .bg6-img1-wrapper {
+        width: rem(858px);
+        height: rem(98px);
+        margin: rem(51px) auto 0;
+        & > .bg6-list {
+          float: left;
+          width: rem(388px);
+          height: rem(98px);
+          font-size: rem(36px);
+          color: #fff;
+          font-family: MicrosoftYaHei;
+          font-weight: 400;
+          text-align: center;
+          line-height: rem(98px);
+          background: url(/static/specials/images/color6_button101_bg.png) no-repeat;
+          background-size: cover;
+          cursor: pointer;
+          text-decoration: none;
+          &:hover {
+            background: url(/static/specials/images/color6_button101_hover_bg.png) no-repeat;
+            background-size: cover;
+          }
+          &.mgr {
+            margin-right: rem(82px);
+          }
+        }
+      }
+      & > .bg6-img2 {
+        width: rem(460px);
+        height: rem(160px);
+        margin: rem(46px) auto;
+        background: url(/static/specials/images/color6_6_ljb.png) no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+}
