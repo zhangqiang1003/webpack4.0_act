@@ -14,8 +14,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 // 打包压缩
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-// 引入config.js
-const config = require('./src/configHtml/config')
 // 自动打开浏览器
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 // copy静态资源文件
@@ -29,12 +27,16 @@ let Entries = {}
 // html文件名的集合
 let HtmlNames = []
 
-try {
-  HtmlNames = fs.readdirSync(path.resolve(__dirname, './src/specials/'), 'utf8')
-  console.log('success!')
-} catch (err) {
-  console.error(err)
+// 读取指定路径下的文件夹(这里读取specials文件夹下的html文件)
+function readDir () {
+  try {
+    HtmlNames = fs.readdirSync(path.resolve(__dirname, './src/specials/'), 'utf8')
+    console.log('success!')
+  } catch (err) {
+    console.error(err)
+  }
 }
+readDir();  
 
 // 填充其他专题页面到index页面的a标签
 function writePageToIndex () {
