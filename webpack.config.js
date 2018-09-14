@@ -20,14 +20,70 @@ const config = require('./src/configHtml/config')
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 // copy静态资源文件
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+// 操作文件
+const fs = require('fs-extra');
 // 通过 html-webpack-plugin 生成的 HTML 集合
 let HTMLPlugins = []
 // 入口文件集合
 let Entries = {}
+// html文件名的集合
+let HtmlNames = []
+
+try {
+  HtmlNames = fs.readdirSync(path.resolve(__dirname, './src/specials/'), 'utf8')
+  console.log('success!')
+} catch (err) {
+  console.error(err)
+}
+
+// 填充其他专题页面到index页面的a标签
+function writePageToIndex () {
+  try {
+    let strHeader = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>活动及专题页</title>
+    </head>
+    <body>
+      <div id="wrapper">
+    `;
+    let strFooter = `
+      </div>
+    </body>
+    </html>
+    `;
+    let strBody = '';
+    HtmlNames.forEach((html) => {
+      let reg = /\.html/ig;
+      let page = html.replace(reg, '');
+      if (page === 'index') {
+        // console.log('')
+      } else {
+        strBody += `<a class="page" href="/specials/${html}" target="_blank">${page}</a>`;
+      }
+    })
+    for (let i = 0; i < 7; i++) {
+      strBody += '<div class="page bg"></div>'
+    }
+    let str = `${strHeader}${strBody}${strFooter}`;
+    // console.log(str);
+    fs.writeFileSync(path.resolve(__dirname, './src/specials/index.html'), str, 'utf8');
+  } catch (err) {
+    console.log(err)
+  }
+}
+writePageToIndex();
 
 // 生成多页面的集合
-config.HTMLDirs.forEach((html) => {
-  let page = html.page
+HtmlNames.forEach((html) => {
+  // let page = html
+  let reg = /\.html/ig;
+  let page = html.replace(reg, '');
+  // console.log(page);
   const htmlPlugin = new HTMLWebpackPlugin({
     filename: `specials/${page}.html`,
     template: path.resolve(__dirname, `./src/specials/${page}.html`),
