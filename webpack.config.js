@@ -101,24 +101,27 @@ function autoCreateStaticFile () {
 autoCreateStaticFile();
 
 // 生成多页面的集合
-HtmlNames.forEach((html) => {
-  // let page = html
-  let reg = /\.html/ig;
-  let page = html.replace(reg, '');
-  // console.log(page);
-  const htmlPlugin = new HTMLWebpackPlugin({
-    filename: `specials/${page}.html`,
-    template: path.resolve(__dirname, `./src/specials/${page}.html`),
-    chunks: [page, 'commons'],
-    minify: {
-      'removeAttributeQuotes': true,
-      'removeComments': true,
-      'removeEmptyAttributes': true
-    }
+function createPagesCollections () {
+  HtmlNames.forEach((html) => {
+    // let page = html
+    let reg = /\.html/ig;
+    let page = html.replace(reg, '');
+    // console.log(page);
+    const htmlPlugin = new HTMLWebpackPlugin({
+      filename: `specials/${page}.html`,
+      template: path.resolve(__dirname, `./src/specials/${page}.html`),
+      chunks: [page, 'commons'],
+      minify: {
+        'removeAttributeQuotes': true,
+        'removeComments': true,
+        'removeEmptyAttributes': true
+      }
+    })
+    HTMLPlugins.push(htmlPlugin)
+    Entries[page] = path.resolve(__dirname, `./src/static/specials/js/${page}.js`)
   })
-  HTMLPlugins.push(htmlPlugin)
-  Entries[page] = path.resolve(__dirname, `./src/static/specials/js/${page}.js`)
-})
+}
+createPagesCollections();
 
 module.exports = (env, argv) => ({
   // 入口文件
