@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "for activity qeeyou",
   "scripts": {
+    "create": "node create.js",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development",
     "babel-header-footer": "babel ./src/static/specials/js/header_footer_js --watch -d ./src/static/specials/plugin/js",
-    "babel": "npm run babel-header-footer"
+    "babel": "npm run babel-header-footer",
+    "delete": "node delete.js"
   },
   "keywords": [
     "activity"
