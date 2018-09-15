@@ -1,0 +1,1 @@
+import style from '../css/game20170622-playbattlegrounds.scss'

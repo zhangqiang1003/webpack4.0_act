@@ -1,19 +1,19 @@
 /**
  * webpack 基础配置
  */
-const webpack = require('webpack')
+const webpack = require('webpack');
 
-const path = require('path')
+const path = require('path');
 // 引入模板插件
-const HTMLWebpackPlugin = require('html-webpack-plugin')
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 // 提取css
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // 清理dist文件夹
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 // 引入丑化的插件
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 // 打包压缩
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 // 自动打开浏览器
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 // copy静态资源文件
@@ -21,22 +21,23 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 // 操作文件
 const fs = require('fs-extra');
 // 通过 html-webpack-plugin 生成的 HTML 集合
-let HTMLPlugins = []
+let HTMLPlugins = [];
 // 入口文件集合
-let Entries = {}
+let Entries = {};
 // html文件名的集合
-let HtmlNames = []
+let HtmlNames = [];
 
+console.log(process.argv);
 // 读取指定路径下的文件夹(这里读取specials文件夹下的html文件)
 function readDir () {
   try {
-    HtmlNames = fs.readdirSync(path.resolve(__dirname, './src/specials/'), 'utf8')
+    HtmlNames = fs.readdirSync(path.resolve(__dirname, './src/specials/'), 'utf8');
     console.log('success!')
   } catch (err) {
     console.error(err)
   }
 }
-readDir();  
+readDir();
 
 // 填充其他专题页面到index页面的a标签
 function writePageToIndex () {
@@ -94,7 +95,7 @@ function autoCreateStaticFile () {
     if (!exists) { // 如果该文件不存在，就创建该文件并自动写入scss文件的引用关系
       let name = js.replace(reg, '');
       fs.appendFileSync(path.resolve(__dirname, `./src/static/specials/js/${js}`), `import style from '../css/${name}.scss'`, 'utf8');
-      fs.appendFileSync(path.resolve(__dirname, `./src/static/specials/css/${name}.scss`), '@import \'../../../common/scss/_tool.scss\';', 'utf8')
+      fs.appendFileSync(path.resolve(__dirname, `./src/static/specials/css/${name}.scss`), '@import \'../../../common/scss/_tool.scss\';', 'utf8');
     }
   })
 }
@@ -103,10 +104,8 @@ autoCreateStaticFile();
 // 生成多页面的集合
 function createPagesCollections () {
   HtmlNames.forEach((html) => {
-    // let page = html
     let reg = /\.html/ig;
     let page = html.replace(reg, '');
-    // console.log(page);
     const htmlPlugin = new HTMLWebpackPlugin({
       filename: `specials/${page}.html`,
       template: path.resolve(__dirname, `./src/specials/${page}.html`),
@@ -117,8 +116,8 @@ function createPagesCollections () {
         'removeEmptyAttributes': true
       }
     })
-    HTMLPlugins.push(htmlPlugin)
-    Entries[page] = path.resolve(__dirname, `./src/static/specials/js/${page}.js`)
+    HTMLPlugins.push(htmlPlugin);
+    Entries[page] = path.resolve(__dirname, `./src/static/specials/js/${page}.js`);
   })
 }
 createPagesCollections();

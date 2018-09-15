@@ -1,0 +1,380 @@
+@import '../../../common/scss/_tool.scss';
+* {
+  box-sizing: border-box;
+  user-select: none;
+  padding: 0;
+  margin: 0;
+  font-family: MicrosoftYaHei;
+}
+.pubg-wrapper {
+  width: 100%;
+  max-width: 1920px;
+  min-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  margin-top: 90px;
+  .set-overlapping {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: rem(1080px);
+    z-index: -1;
+    background: url(../images/PUBG_banner_bg.jpg) no-repeat;
+    background-size: 100% 100%;
+  }
+  & > .wrapper-groups {
+    width: 100%;
+    &:nth-of-type(1) {
+      height: rem(1060px);
+      background-color: rgba(11, 11, 11, 0.4);
+      padding-top: rem(288px);
+      position: relative;
+      .banner-title {
+        width: rem(726px);
+        height: rem(304px);
+        margin: 0 auto;
+        background: url(../images/PUBG_bg1_title.png) no-repeat;
+        background-size: 100% 100%;
+      }
+      .banner-btns {
+        width: rem(850px);
+        height: rem(90px);
+        margin: rem(59px) auto 0;
+        & > .btn {
+          width: rem(380px);
+          height: rem(90px);
+          float: left;
+          font-size: rem(36px);
+          color: #fff;
+          font-family: MicrosoftYaHei;
+          line-height: rem(70px);
+          text-align: center;
+          &.mgr {
+            margin-right: rem(89px);
+          }
+          &:nth-of-type(1) {
+            background: url(../images/PUBG_button101_bg.png) no-repeat;
+            background-size: 100% 100%;
+            &:hover {
+              background: url(../images/PUBG_button101_hover_bg.png) no-repeat;
+              background-size: 100% 100%;
+            }
+          }
+          &:nth-of-type(2) {
+            background: url(../images/PUBG_button102_bg.png) no-repeat;
+            background-size: 100% 100%;
+            &:hover {
+              background: url(../images/PUBG_button102_hover_bg.png) no-repeat;
+              background-size: 100% 100%;
+            }
+          }
+        }
+      }
+    }
+    &:nth-of-type(2) {
+      height: rem(1257px);
+      padding-top: rem(120px);
+      background: url(../images/PUBG_bg2.jpg) no-repeat;
+      background-size: 100% 100%;
+      & > .pubg-title {
+        width: rem(938px);
+        height: rem(154px);
+        margin: 0 auto;
+        background: url(../images/PUBG_bg2_title.png) no-repeat;
+        background-size: 100% 100%;
+      }
+      & > p {
+        font-size: rem(18px);
+        color: #fff;
+        font-weight: 400;
+        text-align: center;
+        margin-top: rem(29px);
+      }
+      & > .pubg-bg2-wrapper {
+        width: rem(1158px);
+        height: rem(717px);
+        margin: rem(68px) auto 0;
+      }
+      .bg2-img {
+        width: rem(551px);
+        height: rem(717px);
+        float: left;
+        position: relative;
+        &.mgr {
+          margin-right: rem(56px);
+        }
+        &:nth-of-type(1) {
+          background: url(../images/PUBG_bg2_1.png) no-repeat;
+          background-size: 100% 100%;
+        }
+        &:nth-of-type(2) {
+          background: url(../images/PUBG_bg2_2.png) no-repeat;
+          background-size: 100% 100%;
+        }
+        & > ul {
+          position: absolute;
+          bottom: rem(-9px);
+          left: 0;
+          right: 0;
+          & > li {
+            list-style: none;
+            text-align: center;
+            line-height: rem(47px);
+            color: rgba(219, 50, 47, 1);
+            font-size: rem(20px);
+            &.color {
+              color:rgba(46, 219, 118, 1);
+            }
+          }
+        }
+      }
+    }
+    &:nth-of-type(3) {
+      height: rem(886px);
+      padding-top: rem(120px);
+      background: url(../images/PUBG_bg3.jpg) no-repeat;
+      background-size: 100% 100%;
+      & > .pubg-title {
+        width: rem(963px);
+        height: rem(71px);
+        margin: 0 auto;
+        background: url(../images/PUBG_bg3_title.png) no-repeat;
+        background-size: 100% 100%;
+      }
+      & > .bg3-line {
+        width: rem(1000px);
+        height: rem(43px);
+        margin: rem(41px) auto 0;
+        background: url(../images/PUBG_line.png) no-repeat;
+        background-size: 100% 100%;
+      }
+      & > .bg3-img-wrapper {
+        width: rem(1160px);
+        height: rem(411px);
+        margin: rem(30px) auto 0;
+        & > span {
+          float: left;
+          width: rem(278px);
+          height: rem(411px);
+          &.mgr {
+            margin-right: rem(16px);
+          }
+          &:nth-of-type(1) {
+            background: url(../images/PUBG_bg3_1.png) no-repeat;
+            background-size: 100% 100%;
+          }
+          &:nth-of-type(2) {
+            background: url(../images/PUBG_bg3_2.png) no-repeat;
+            background-size: 100% 100%;
+          }
+          &:nth-of-type(3) {
+            background: url(../images/PUBG_bg3_3.png) no-repeat;
+            background-size: 100% 100%;
+          }
+          &:nth-of-type(4) {
+            background: url(../images/PUBG_bg3_4.png) no-repeat;
+            background-size: 100% 100%;
+          }
+          & > h3 {
+            font-size: rem(24px);
+            color: rgba(235, 167, 46, 1);
+            font-weight: bold;
+            text-align: center;
+            margin-top: rem(30px);
+            margin-bottom: 0;
+          }
+          & > p {
+            color: #fff;
+            font-size: rem(18px);
+            line-height: rem(30px);
+            text-align: center;
+            margin: rem(230px) rem(27px) 0;
+          }
+        }
+      }
+    }
+    &:nth-of-type(4) {
+      height: rem(1056px);
+      padding-top: rem(120px);
+      background: url(../images/PUBG_bg4.jpg) no-repeat;
+      background-size: 100% 100%;
+      & > .pubg-title {
+        width: rem(942px);
+        height: rem(154px);
+        margin: 0 auto;
+        background: url(../images/PUBG_bg4_title.png) no-repeat;
+        background-size: 100% 100%;
+      }
+      & > p {
+        font-size: rem(18px);
+        color: #fff;
+        font-weight: 400;
+        text-align: center;
+        margin-top: rem(27px);
+        margin-bottom: 0;
+      }
+      & > ul {
+        width: rem(607px);
+        height: rem(525px);
+        margin-left: rem(933px);
+        margin-top: rem(55px);
+        & > li {
+          width: rem(607px);
+          height: rem(120px);
+          &.mgb {
+            margin-bottom: rem(15px);
+          }
+          &:nth-of-type(1) {
+            background: url(../images/PUBG_bg4_1.png) no-repeat;
+            background-size: 100% 100%;
+          }
+          &:nth-of-type(2) {
+            background: url(../images/PUBG_bg4_2.png) no-repeat;
+            background-size: 100% 100%;
+          }
+          &:nth-of-type(3) {
+            background: url(../images/PUBG_bg4_3.png) no-repeat;
+            background-size: 100% 100%;
+          }
+          &:nth-of-type(4) {
+            background: url(../images/PUBG_bg4_4.png) no-repeat;
+            background-size: 100% 100%;
+          }
+          & > h3 {
+            font-size: rem(24px);
+            color: rgba(235, 167, 46, 1);
+            font-weight: bold;
+            text-align: left;
+            padding-top: rem(13px);
+            margin-left: rem(139px);
+            margin-bottom: 0;
+          }
+          & > p {
+            color: #fff;
+            font-size: rem(20px);
+            line-height: rem(30px);
+            text-align: left;
+            font-weight: 400;
+            margin-left: rem(139px);
+            margin-top: rem(14px);
+          }
+        } 
+      }
+    }
+    &:nth-of-type(5) {
+      height: rem(895px);
+      padding-top: rem(120px);
+      background: url(../images/PUBG_bg5.jpg) no-repeat;
+      background-size: 100% 100%;
+      & > .pubg-title {
+        width: rem(869px);
+        height: rem(70px);
+        margin: 0 auto;
+        background: url(../images/PUBG_bg5_title.png) no-repeat;
+        background-size: 100% 100%;
+      }
+      & > p {
+        font-size: rem(18px);
+        width: rem(900px);
+        line-height: rem(30px);
+        color: rgba(41,46,51,1);
+        font-weight: 400;
+        margin: rem(27px) auto 0;
+        text-align: center;
+      }
+      & > .bg5-img-wrapper {
+        width: rem(1160px);
+        height: rem(419px);
+        margin: rem(60px) auto 0;
+        & > span {
+          float: left;
+          width: rem(278px);
+          height: rem(419px);
+          &.mgr {
+            margin-right: rem(16px);
+          }
+          &:nth-of-type(1) {
+            background: url(../images/PUBG_bg5_1.png) no-repeat;
+            background-size: 100% 100%;
+          }
+          &:nth-of-type(2) {
+            background: url(../images/PUBG_bg5_2.png) no-repeat;
+            background-size: 100% 100%;
+          }
+          &:nth-of-type(3) {
+            background: url(../images/PUBG_bg5_3.png) no-repeat;
+            background-size: 100% 100%;
+          }
+          &:nth-of-type(4) {
+            background: url(../images/PUBG_bg5_4.png) no-repeat;
+            background-size: 100% 100%;
+          }
+          & > h3 {
+            font-size: rem(24px);
+            color: rgba(235, 167, 46, 1);
+            font-weight: bold;
+            text-align: center;
+            margin-top: rem(30px);
+            margin-bottom: 0;
+          }
+          & > p {
+            color: #fff;
+            font-size: rem(18px);
+            line-height: rem(30px);
+            text-align: center;
+            margin: rem(230px) rem(27px) 0;
+          }
+        }
+      }
+    }
+    &:nth-of-type(6) {
+      height: rem(486px);
+      padding-top: rem(121px);
+      background: url(../images/PUBG_bg6.jpg) no-repeat;
+      background-size: 100% 100%;
+      & > .pubg-title {
+        width: rem(462px);
+        height: rem(69px);
+        margin: 0 auto;
+        background: url(../images/PUBG_bg6_tittle.png) no-repeat;
+        background-size: 100% 100%;
+      }
+      & > .bg6-btns {
+        width: rem(850px);
+        height: rem(90px);
+        margin-top: rem(80px);
+        margin-left: rem(555px);
+        & > .btn {
+          width: rem(380px);
+          height: rem(90px);
+          float: left;
+          font-size: rem(36px);
+          color: #fff;
+          font-family: MicrosoftYaHei;
+          line-height: rem(70px);
+          text-align: center;
+          &.mgr {
+            margin-right: rem(89px);
+          }
+          &:nth-of-type(1) {
+            background: url(../images/PUBG_button101_bg.png) no-repeat;
+            background-size: 100% 100%;
+            &:hover {
+              background: url(../images/PUBG_button101_hover_bg.png) no-repeat;
+              background-size: 100% 100%;
+            }
+          }
+          &:nth-of-type(2) {
+            background: url(../images/PUBG_button102_bg.png) no-repeat;
+            background-size: 100% 100%;
+            &:hover {
+              background: url(../images/PUBG_button102_hover_bg.png) no-repeat;
+              background-size: 100% 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
