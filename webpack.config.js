@@ -81,26 +81,6 @@ function writePageToIndex () {
 }
 writePageToIndex();
 
-// 自动创建对应的scss文件和js文件
-function autoCreateStaticFile () {
-  let JsNames = [];
-  let reg = /\.html/ig;
-  HtmlNames.forEach((html) => {
-    let page = html.replace(reg, '.js');
-    JsNames.push(page);
-  })
-  JsNames.forEach((js) => {
-    let reg = /\.js/ig;
-    let exists = fs.pathExistsSync(path.resolve(__dirname, `./src/static/specials/js/${js}`));
-    if (!exists) { // 如果该文件不存在，就创建该文件并自动写入scss文件的引用关系
-      let name = js.replace(reg, '');
-      fs.appendFileSync(path.resolve(__dirname, `./src/static/specials/js/${js}`), `import style from '../css/${name}.scss'`, 'utf8');
-      fs.appendFileSync(path.resolve(__dirname, `./src/static/specials/css/${name}.scss`), '@import \'../../../common/scss/_tool.scss\';', 'utf8');
-    }
-  })
-}
-autoCreateStaticFile();
-
 // 生成多页面的集合
 function createPagesCollections () {
   HtmlNames.forEach((html) => {
