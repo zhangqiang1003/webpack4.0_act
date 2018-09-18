@@ -4,8 +4,8 @@ const path = require('path');
 (function() {
   const htmlPath = './src/specials/'; // 本地开发环境的html资源路径
   const staticPath = './src/static/specials/'; // 本地开发环境的静态资源路径
-  const htmlRemotePath = '../templates/specials/'; // 远端
-  const staticRemotePath = '../static/specials/';
+  const htmlRemotePath = './production/templates/specials/'; // 远端
+  const staticRemotePath = './production/static/specials/';
   const type = process.argv[2]; // 判断是删除打包后上线版本的文件还是本地开发的源文件；值为：local 或 remote
   const name = process.argv[3]; // 要删除的文件名
 
@@ -42,9 +42,16 @@ const path = require('path');
 
   // 删除远端生产环境的打包代码
   function delRemoteFile() {
+    // 删除之前应检查是否存在
+    let existsCss = fs.existsSync(path.resolve(__dirname, `${staticRemotePath}css/${name}.css`));
+    let existsJs = fs.existsSync(path.resolve(__dirname, `${staticRemotePath}js/${name}.js`));
     fs.unlinkSync(path.resolve(__dirname, `${htmlRemotePath}${name}.html`)); // 删除html文件
-    fs.unlinkSync(path.resolve(__dirname, `${staticRemotePath}css/${name}.scss`)); // 删除scss文件
-    fs.unlinkSync(path.resolve(__dirname, `${staticRemotePath}js/${name}.js`)); // 删除js文件
+    if (existsCss) {
+      fs.unlinkSync(path.resolve(__dirname, `${staticRemotePath}css/${name}.css`)); // 删除css文件
+    }
+    if (existsJs) {
+      fs.unlinkSync(path.resolve(__dirname, `${staticRemotePath}js/${name}.js`)); // 删除js文件
+    }
 
     // 删除image文件
     let imagesName = fs.readdirSync(path.resolve(__dirname, `${staticRemotePath}images/`));
