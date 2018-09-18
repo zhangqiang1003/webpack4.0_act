@@ -1,3 +1,9 @@
+/**
+ * 使用说明：
+ * 1. 命令行执行 npm run create {name};该命令会在本地开发环境创建相应的文件；
+ * 2. 举例：创建test.html文件及其对应的静态资源（包括scss,js和图片）， 执行命令 npm run create test;
+ */
+
 const fs = require('fs');
 const path = require('path');
 

@@ -1,7 +1,10 @@
 /**
- * 移动本地打包的文件到生产环境
- * tips：移动文件之前必须先执行npm run build，生成打包文件
+ * 使用说明：
+ * 1. 命令行执行 npm run move {name};该命令会移动本地打包的文件到生产环境；
+ * 2. 举例：把打包的文件test.html文件及其对应的静态资源（包括scss,js和图片）移动到生产环境的对应目录， 执行命令 npm run move test;
+ * 3. tips：移动文件之前必须先执行npm run build，生成打包文件
  */
+
 const fs = require('fs');
 const path = require('path');
 

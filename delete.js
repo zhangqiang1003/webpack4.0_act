@@ -1,3 +1,10 @@
+/**
+ * 使用说明：
+ * 1. 命令行执行 npm run delete {remote or local} {name}；该命令使用local参数会删除本地开发环境创建相应的文件，使用remote参数会删除生产环境的相应文件；
+ * 2. 举例：删除本地开发环境的test.html文件及其对应的静态资源（包括scss,js和图片）， 执行命令 npm run delete local test;
+ * 3. 举例：删除生产环境的test.html文件及其对应的静态资源（包括css，js和图片）， 执行命令 npm run delete remote test;
+ */
+
 const fs = require('fs');
 const path = require('path');
 
