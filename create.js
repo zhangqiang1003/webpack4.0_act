@@ -6,6 +6,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const exec = require('child_process').exec;
 
 (function() {
   const name = process.argv[2];
@@ -67,6 +68,8 @@ const path = require('path');
     fs.appendFileSync(path.resolve(__dirname, `${staticPath}css/${name}.scss`), '@import \'../../../common/scss/_tool.scss\';', 'utf8');
     fs.appendFileSync(path.resolve(__dirname, `${staticPath}js/${name}.js`), `import style from '../css/${name}.scss'`, 'utf8');
     console.log('创建静态资源文件成功！');
+    console.log('正在启动本地服务器，请稍后...')
+    exec('npm start', 'utf8');
   } catch (e) {
     // 未创建成功，执行删除操作，把此次创建的文件删除
     const existsHtml = fs.existsSync(path.resolve(__dirname, `${htmlPath}${name}.html`));
