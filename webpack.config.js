@@ -10,9 +10,9 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // 清理dist文件夹
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-// 引入丑化的插件
+// 引入js丑化的插件
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-// 打包压缩
+// 优化css打包
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 // 自动打开浏览器
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
@@ -26,12 +26,17 @@ let HTMLPlugins = [];
 let Entries = {};
 // html文件名的集合
 let HtmlNames = [];
+// 路径
+const htmlPath = './src/specials/'; // 源文件html的路径
+const srcStaticPath = './src/static/specials/'; // 源文件的静态资源路径
+const serverStaticPath = 'static/specials/'; // 服务器的静态资源路径
+const distStaticPath = './dist/static/specials/'; // 打包的静态资源的路径
 
 console.log(process.argv);
 // 读取指定路径下的文件夹(这里读取specials文件夹下的html文件)
 function readDir () {
   try {
-    HtmlNames = fs.readdirSync(path.resolve(__dirname, './src/specials/'), 'utf8');
+    HtmlNames = fs.readdirSync(path.resolve(__dirname, `${htmlPath}`), 'utf8');
     console.log('success!')
   } catch (err) {
     console.error(err)
@@ -74,7 +79,7 @@ function writePageToIndex () {
     }
     let str = `${strHeader}${strBody}${strFooter}`;
     // console.log(str);
-    fs.writeFileSync(path.resolve(__dirname, './src/specials/index.html'), str, 'utf8');
+    fs.writeFileSync(path.resolve(__dirname, `${htmlPath}index.html`), str, 'utf8');
   } catch (err) {
     console.log(err)
   }
@@ -88,7 +93,7 @@ function createPagesCollections () {
     let page = html.replace(reg, '');
     const htmlPlugin = new HTMLWebpackPlugin({
       filename: `specials/${page}.html`,
-      template: path.resolve(__dirname, `./src/specials/${page}.html`),
+      template: path.resolve(__dirname, `${htmlPath}${page}.html`),
       chunks: [page, 'commons'],
       minify: {
         'removeAttributeQuotes': true,
@@ -97,7 +102,7 @@ function createPagesCollections () {
       }
     })
     HTMLPlugins.push(htmlPlugin);
-    Entries[page] = path.resolve(__dirname, `./src/static/specials/js/${page}.js`);
+    Entries[page] = path.resolve(__dirname, `${srcStaticPath}js/${page}.js`);
   })
 }
 createPagesCollections();
@@ -107,7 +112,7 @@ module.exports = (env, argv) => ({
   entry: Entries,
   // 输出文件
   output: {
-    filename: 'static/specials/js/[name].js',
+    filename: `${serverStaticPath}js/[name].js`,
     path: path.resolve(__dirname, './dist'),
     publicPath: '/'
   },
@@ -149,7 +154,7 @@ module.exports = (env, argv) => ({
         options: {
           limit: 10000,
           // 打包生成图片的名字
-          name: 'static/specials/images/[name].[ext]',
+          name: `${serverStaticPath}images/[name].[ext]`,
         }
       }],
     },
@@ -212,16 +217,16 @@ module.exports = (env, argv) => ({
     // 自动生成html插件
     ...HTMLPlugins,
     new MiniCssExtractPlugin({
-      filename: 'static/specials/css/[name].css'
+      filename: `${serverStaticPath}css/[name].css`
     }),
     new CopyWebpackPlugin([ // 静态资源不打包
       {
-        from: path.resolve(__dirname, './src/static/specials/plugin/css/'),
-        to: path.resolve(__dirname, './dist/static/specials/css/')
+        from: path.resolve(__dirname, `${srcStaticPath}plugin/css/`),
+        to: path.resolve(__dirname, `${distStaticPath}css/`)
       },
       {
-        from: path.resolve(__dirname, './src/static/specials/plugin/js/'),
-        to: path.resolve(__dirname, './dist/static/specials/js/')
+        from: path.resolve(__dirname, `${srcStaticPath}plugin/js/`),
+        to: path.resolve(__dirname, `${distStaticPath}js/`)
       },
       {
         from: path.resolve(__dirname, './src/static/official_web/'),
@@ -232,8 +237,8 @@ module.exports = (env, argv) => ({
         to: path.resolve(__dirname, './dist/static/plugins/layer/')
       },
       {
-        from: path.resolve(__dirname, './src/static/specials/images/'),
-        to: path.resolve(__dirname, './dist/static/specials/images/')
+        from: path.resolve(__dirname, `${srcStaticPath}images/`),
+        to: path.resolve(__dirname, `${distStaticPath}images/`)
       }
     ]),
     // 自动清理 dist 文件夹
@@ -241,7 +246,7 @@ module.exports = (env, argv) => ({
     new OpenBrowserPlugin({url: 'http://localhost:8080/specials/'})
   ],
   devServer: {
-    host: '0.0.0.0',
+    host: '0.0.0.0', // 配置为0.0.0.0，手机和pc在同一个网络环境下，手机可以连接本地服务器
     port: 8080,
     // 项目根目录
     contentBase: './dist',
