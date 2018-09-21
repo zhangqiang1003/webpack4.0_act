@@ -1,0 +1,68 @@
+@import '../../../common/scss/_tool.scss';
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  user-select: none;
+}
+.europa-wrapper {
+  min-width: 1300px;
+  max-width: 1920px;
+  margin: 100px auto 0;
+  img {
+    display: none;
+  }
+  & > .europa {
+    width: 100%;
+    height: rem(900px);
+    background: url(/static/specials/images/Europa_bg.jpg) no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    & > .h3 {
+      font-size: rem(36px);
+      color: rgba(254, 254, 254, 1);
+      font-weight: bold;
+      font-family: MicrosoftYaHei;
+      position: absolute;
+      left: rem(440px);
+      top: rem(276px);
+      font-style: italic;
+    }
+    & > .p {
+      font-size: rem(24px);
+      color: #fff;
+      font-weight: 400;
+      font-family: MicrosoftYaHei;
+      position: absolute;
+      left: rem(467px);
+      top: rem(434px);
+      font-style: italic;
+    }
+    & > .europa-btn {
+      text-decoration: none;
+      position: absolute;
+      left: rem(438px);
+      top: rem(554px);
+      width: rem(392px);
+      height: rem(68px);
+      font-style: italic;
+      background: url(/static/specials/images/Europa_button_bg.png) no-repeat;
+      background-size: 100% 100%;
+      font-size: rem(30px);
+      color: #fff;
+      font-weight: 400;
+      font-family: MicrosoftYaHei;
+      line-height: rem(68px);
+      text-align: center;
+      cursor: pointer;
+      &:hover {
+        &.hover {
+          background: url(/static/specials/images/Europa_button_hover_bg.png) no-repeat;
+          background-size: 100% 100%;
+        }
+      }
+    }
+  }
+}
