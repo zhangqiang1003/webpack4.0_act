@@ -134,22 +134,28 @@
           right: 0;
           bottom: 0;
           height: rem(213px);
-          padding-left: rem(31px);
-          padding-right: rem(31px);
+          padding-left: rem(10px);
+          padding-right: rem(10px);
           text-align: center;
           &.pd {
-            padding-left: rem(20px);
-            padding-right: rem(20px);
+            padding-left: rem(22px);
+            padding-right: rem(22px);
           }
           & > h3 {
             font-size: rem(24px);
             color: rgba(239, 177, 52, 1);
             font-weight: bold;
+            margin: 0;
+            padding: 0;
+            margin-top: rem(10px);
             font-family: MicrosoftYaHei;
           }
           & > p {
             font-size: rem(20px);
-            line-height: rem(30px);
+            line-height: rem(34px);
+            margin: 0;
+            padding: 0;
+            margin-top: rem(15px);
             color: #fff;
             font-weight: 400;
             font-family: MicrosoftYaHei;

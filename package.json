@@ -51,7 +51,10 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
+    "dom-to-image": "^2.6.0",
+    "file-saver": "^2.0.0-rc.1",
     "fs-extra": "^7.0.0",
+    "html2canvas": "^1.0.0-alpha.12",
     "jquery": "^3.3.1"
   }
 }
