@@ -5,6 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>消息详情</title>
+  <style>
+    .swiper-container {
+      width: 600px;
+      height: 300px;
+      overflow: hidden;
+    }
+    .swiper-wrapper {
+      width: 1800px;
+      height: 300px;
+    }
+    .swiper-slide {
+      width: 600px;
+      height: 300px;
+      float: left;
+    }
+    .color-yellow {
+      background-color: yellow;
+    }
+    .color-blue {
+      background-color: blue;
+    }
+    .color-red {
+      background-color: red;
+    }
+  </style>
 </head>
 <body>
   <div id="wrapper">
@@ -12,6 +37,13 @@
       <h2 class="h2"></h2>
       <p class="time"></p>
       <div class="content-wrapper"></div>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide color-yellow">slider1</div>
+          <div class="swiper-slide color-blue">slider2</div>
+          <div class="swiper-slide color-red">slider3</div>
+        </div>
+      </div>
   </div>
   <script type="text/javascript" src="/static/specials/js/jquery.js"></script>
   <script src="/static/specials/js/flexible.js"></script>
